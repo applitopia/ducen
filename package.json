@@ -1,6 +1,6 @@
 {
   "name": "ducen",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Transducer engine in Javascript that provides flow-typed support transducer recipes",
   "main": "dist/index.js",
   "scripts": {
