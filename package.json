@@ -1,0 +1,64 @@
+{
+  "name": "ducen",
+  "version": "0.0.0",
+  "description": "Transducer engine in Javascript that provides flow-typed support transducer recipes",
+  "main": "dist/index.js",
+  "scripts": {
+    "all": "npm run flow status && npm run lint && npm run build && npm run test && npm run clean",
+    "build": "npm run build:clean && npm run build:babel && npm run build:browserify && npm run build:uglify && npm run build:flow",
+    "build:clean": "rimraf dist && rimraf out && rimraf coverage",
+    "build:babel": "babel src/ -d dist/",
+    "build:browserify": "mkdirp dist && browserify dist/index.js -o dist/ducen.js",
+    "build:uglify": "uglifyjs dist/ducen.js -o dist/ducen.min.js -c -m",
+    "build:flow": "cp -p flow-typed/transducers.js dist/transducers.js.flow && cp -p flow-typed/ducen.js dist/ducen.js.flow",
+    "flow": "flow",
+    "lint": "eslint src __tests__ flow-typed",
+    "test": "jest --verbose --coverage",
+    "clean": "rimraf out && rimraf coverage",
+    "debug": "node --inspect --debug-brk ./node_modules/.bin/jest -i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/applitopia/ducen.git"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "ducen",
+    "immutable-js",
+    "immutable",
+    "transducer",
+    "transducers",
+    "engine",
+    "flow",
+    "flow-typed"
+  ],
+  "author": "Applitopia, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/applitopia/ducen/issues"
+  },
+  "homepage": "https://github.com/applitopia/ducen#readme",
+  "dependencies": {
+    "transducers.js": "^0.3.2",
+    "immutable-sorted": "^0.2.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "browserify": "^14.4.0",
+    "eslint": "^4.3.0",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "flow-bin": "^0.67.1",
+    "jest": "^20.0.4",
+    "redux": "^3.7.2",
+    "regenerator-runtime": "^0.10.5",
+    "rimraf": "^2.6.1"
+  }
+}
