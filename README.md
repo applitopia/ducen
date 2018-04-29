@@ -32,7 +32,7 @@ Transducer recipe:
 var { compile } = require('ducen');
 var { seq } = require('transducers.js');
 
-// Define transducer recipe
+// Define a transducer recipe
 var recipe = [
   {
     op: 'MAP',
@@ -58,14 +58,13 @@ var recipe = [
   }
 ];
 
-// Compile recipe into a tranducer
+// Compile the recipe into a tranducer
 var xf = compile(recipe);
 
-// Transform input with compiled transducer
+// Transform input with the compiled transducer
 var input = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 var output = seq(input, xf);
-
-expect(output).toEqual([30]);
+// [30]
 ```
 
 With flow types:
@@ -77,7 +76,7 @@ import type { TransducerRecipe } from 'ducen';
 import { seq } from 'transducers.js';
 import type { Transducer } from 'transducers.js';
 
-// Define transducer recipe
+// Define a transducer recipe
 let recipe: TransducerRecipe<number, number> = [
   {
     op: 'MAP',
@@ -103,14 +102,13 @@ let recipe: TransducerRecipe<number, number> = [
   }
 ];
 
-// Compile recipe into a tranducer
+// Compile the recipe into a tranducer
 const xf: Transducer<number, number, Array<number>> = compile(recipe);
 
-// Transform input with compiled transducer
+// Transform input with the compiled transducer
 const input: Array<number> = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 const output: Array<number> = seq(input, xf);
-
-expect(output).toEqual([30]);
+// [30]
 ```
 
 Development

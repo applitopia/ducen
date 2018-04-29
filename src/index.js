@@ -90,7 +90,9 @@ import {
   sort,
   group,
   groupBy,
-} from './transducers.js';
+} from './transducers';
+
+import { compile } from './compile';
 
 export {
   isReduced,
@@ -102,14 +104,5 @@ export {
   sort,
   group,
   groupBy,
-};
-
-import { compile } from './ducen';
-
-export {
-  compile
-};
-
-export default {
   compile
 };

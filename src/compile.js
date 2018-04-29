@@ -8,8 +8,8 @@
  *  @flow
  */
 
-import { reducer, sort, transducer, group, groupBy } from '.';
 import { map, filter, compose, cat, take, drop } from 'transducers.js';
+import { reducer, sort, transducer, group, groupBy } from '.';
 import type { Context, Transducer } from 'transducers.js';
 
 export function compile<T1, T2, T3>(recipe: TransducerRecipe<T1, T2>, ctx?: Context): Transducer<T1, T2, T3> {
