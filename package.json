@@ -49,16 +49,16 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^8.2.3",
-    "babel-jest": "^20.0.3",
+    "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.0",
     "babel-preset-flow": "^6.23.0",
-    "browserify": "^14.4.0",
-    "eslint": "^4.3.0",
+    "browserify": "^16.2.0",
+    "eslint": "^4.19.0",
     "eslint-plugin-flowtype": "^2.46.3",
-    "flow-bin": "^0.67.1",
-    "jest": "^20.0.4",
-    "redux": "^3.7.2",
-    "regenerator-runtime": "^0.10.5",
-    "rimraf": "^2.6.1"
+    "flow-bin": "^0.71.0",
+    "jest": "^22.4.3",
+    "redux": "^4.0.0",
+    "regenerator-runtime": "^0.11.1",
+    "rimraf": "^2.6.2"
   }
 }
